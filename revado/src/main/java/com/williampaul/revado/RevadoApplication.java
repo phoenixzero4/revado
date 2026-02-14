@@ -1,4 +1,4 @@
-package com.revature.revado.revado;
+package com.williampaul.revado;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

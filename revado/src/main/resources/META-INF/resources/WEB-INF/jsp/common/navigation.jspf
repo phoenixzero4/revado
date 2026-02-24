@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 p-1">
+	<a class="navbar-brand m-1" href="https://WilliamPhoenixPaul.tech">WilliamPhoenixPaul.tech</a>
+	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="./list-todos">Todos</a></li>
+			<li class="nav-item"><a class="nav-link" href="settings">Settings</a></li>
+		</ul>
+	</div>
+	<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+	</ul>	
+</nav>

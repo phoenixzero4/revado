@@ -34,27 +34,35 @@ public class TodoController {
 	}
 
 	// Controller
-//	@GetMapping("/list-todos")                    // maps the page you’re on
+//	@GetMapping("/listTodos")                    // maps the page you’re on
 //	public String listTodos(Model model,
 //	        @AuthenticationPrincipal UserDetails ud) { // get logged-in user
 //	    String username = ud.getUsername();            // extract username
 //	    List<Todo> todos = todoService.findByUsername(username); // query DB
 //	    model.addAttribute("todos", todos);            // put list in model
-//	    return "list-todos";                           // Thymeleaf/JSP view name
+//	    return "listTodos";                           // Thymeleaf/JSP view name
 //	}
 	
 	@GetMapping("settings")
 	public String settingsPage(ModelMap model) {
+		String username = getLoggedInUsername(model);
+		
 		return "settings";
 	}
 	
-	@GetMapping("list-todos")
+	@GetMapping("createNewList")
+	public String createNewList(ModelMap model) {
+		String username = getLoggedInUsername(model);
+		return "createNewList";
+	}
+	
+	@GetMapping("listTodos")
 	public String listAllTodos(ModelMap model) {
 		String username = getLoggedInUsername(model);
 		List<Todo> todos = todoService.findByUsername(username);
 		model.addAttribute("todos", todos);
 		
-		return "list-todos";
+		return "listTodos";
 	}
 
 	//GET, POST
@@ -76,7 +84,7 @@ public class TodoController {
 		String username = getLoggedInUsername(model);
 		todoService.addTodo(username, todo.getDescription(), 
 				LocalDate.now().plusYears(1), false);
-		return "redirect:list-todos";
+		return "redirect:listTodos";
 	}
 
 	@RequestMapping("delete-todo")
@@ -84,7 +92,7 @@ public class TodoController {
 		//Delete todo
 		
 		todoService.deleteById(id);
-		return "redirect:list-todos";
+		return "redirect:listTodos";
 		
 	}
 
@@ -105,7 +113,7 @@ public class TodoController {
 		String username = getLoggedInUsername(model);
 		todo.setUsername(username);
 		todoService.updateTodo(todo);
-		return "redirect:list-todos";
+		return "redirect:listTodos";
 	}
 
 	private String getLoggedInUsername(ModelMap model) {

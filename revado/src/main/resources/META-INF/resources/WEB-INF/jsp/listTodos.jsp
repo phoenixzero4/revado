@@ -1,6 +1,13 @@
 	<%@ include file="common/header.jspf" %>
+	<title>Manage Your Todos</title>	
+		</head>
+	<body>
+	
 	<%@ include file="common/navigation.jspf" %>
+				
+
 	<div class="container">
+	<h1 style="color:blue">List Todos Page</h1>
 			<h1>${ name.toUpperCase() } Todos</h1>
 		
 			<table class="table">

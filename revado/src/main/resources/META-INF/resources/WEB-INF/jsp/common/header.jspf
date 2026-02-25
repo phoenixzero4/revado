@@ -8,6 +8,3 @@
 		<link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" >
 		<link href="index.css" rel="stylesheet">
 		
-		<title>Manage Your Todos</title>		
-	</head>
-	<body>

@@ -14,7 +14,14 @@ public class TodoService {
 	
 	private static final List<Todo> todos = new ArrayList<>();
 	
-	private static int todosCount = 0;
+	static {
+		todos.add(new Todo(1, "phoenix", "Learn Angular", LocalDate.now().plusYears(1), false));
+		todos.add(new Todo(2, "phoenix", "Learn Jenkins", LocalDate.now().plusYears(2), false));
+		todos.add(new Todo(3, "phoenix", "Learn AWS", LocalDate.now().plusMonths(1), false));
+		todos.add(new Todo(4, "phoenix", "Learn Kafka", LocalDate.now().plusWeeks(1), true));
+	}
+	
+	private static int todosCount = 4;
 	
 
 	
